@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class RenkKontrol : MonoBehaviour
 {
@@ -20,13 +22,17 @@ public class RenkKontrol : MonoBehaviour
     public bool kontrol1;
     public bool kontrol2;
     public bool kontrol3;
-
-
+    public DevamEtButonlarıKontrol dvmetkod;
+    [SerializeField]
+    GameObject basaDon;
+    public Button DevamEt;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+        DevamEt.gameObject.SetActive(false);
 
         basilan = gameObject.gameObject;
 
@@ -34,15 +40,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilacak.SetActive(false);
 
-        for(int i = 0; i < 3; i++)
-        {
-            cshButton[i].enabled = false;
-            e4Button[i].enabled = false;
-
-        }
-        dsh4Button[0].enabled = false;
-        dsh4Button[1].enabled = false;
-        b3Button.enabled = false;
+        interaktifKapat();
 
 
     }
@@ -51,9 +49,15 @@ public class RenkKontrol : MonoBehaviour
     void Update()
     {
 
-        ilkdurum();
+        if (dvmetkod.sayac == 0)
+        {
+            ilkdurum();
 
-        ilkbasarikontrol();
+            ilkbasarikontrol();
+
+        }
+
+        
 
         
 
@@ -65,9 +69,12 @@ public class RenkKontrol : MonoBehaviour
         if (kontrol1 == true && kontrol2 == true && kontrol3 == true)
         {
 
-
             basari.text = "Başardın";
-            
+
+            interaktifKapat();
+
+            DevamEt.gameObject.SetActive(true);
+
         }
 
         if (sayac == 3 && kontrol1 == false)
@@ -76,12 +83,22 @@ public class RenkKontrol : MonoBehaviour
 
             basari.text = "tekrar dene";
 
+
+            basaDon.SetActive(true);
+
+            interaktifKapat();
+
+
         }
         if (sayac == 3 && kontrol2 == false)
         {
 
 
             basari.text = "tekrar dene";
+
+            basaDon.SetActive(true);
+
+            interaktifKapat();
         }
 
         if (sayac == 3 && kontrol3 == false)
@@ -89,9 +106,18 @@ public class RenkKontrol : MonoBehaviour
 
 
             basari.text = "tekrar dene";
+
+            basaDon.SetActive(true);
+
+            interaktifKapat();
         }
 
+        
+
     }
+
+
+
 
 
     public void ilkdurum()
@@ -125,9 +151,9 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = cshButton[0].gameObject;
 
-        cshButton[0].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        
 
-        MuzikYonetici.sescal("c#");
+        MüzikYönetMKutusu.sescalMkutusu("c#");
 
         sayac++;
 
@@ -138,9 +164,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = cshButton[1].gameObject;
 
-        cshButton[1].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("c#");
+        MüzikYönetMKutusu.sescalMkutusu("c#");
 
         sayac++;
     }
@@ -150,9 +174,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = cshButton[2].gameObject;
 
-        cshButton[2].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("c#");
+        MüzikYönetMKutusu.sescalMkutusu("c#");
 
         sayac++;
     }
@@ -162,9 +184,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = e4Button[0].gameObject;
 
-        e4Button[0].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("e4");
+        MüzikYönetMKutusu.sescalMkutusu("e4");
 
         sayac++;
     }
@@ -174,9 +194,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = e4Button[1].gameObject;
 
-        e4Button[1].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("e4");
+        MüzikYönetMKutusu.sescalMkutusu("e4");
 
         sayac++;
     }
@@ -186,9 +204,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = e4Button[2].gameObject;
 
-        e4Button[2].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("e4");
+        MüzikYönetMKutusu.sescalMkutusu("e4");
 
         sayac++;
     }
@@ -198,9 +214,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = b3Button.gameObject;
 
-        b3Button.GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("b3");
+        MüzikYönetMKutusu.sescalMkutusu("b3");
 
         sayac++;
     }
@@ -210,9 +224,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = dsh4Button[0].gameObject;
 
-        dsh4Button[0].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("d#4");
+        MüzikYönetMKutusu.sescalMkutusu("d#4");
 
         sayac++;
     }
@@ -222,9 +234,7 @@ public class RenkKontrol : MonoBehaviour
 
         basilan = dsh4Button[1].gameObject;
 
-        dsh4Button[1].GetComponent<Image>().color = new Color(255, 255, 255, 255);
-
-        MuzikYonetici.sescal("d#4");
+        MüzikYönetMKutusu.sescalMkutusu("d#4");
 
         sayac++;
     }
@@ -236,14 +246,29 @@ public class RenkKontrol : MonoBehaviour
         Destroy(baslatxt);
         Destroy(baslabtn);
 
-        StartCoroutine(geleceksayilar());
+        StartCoroutine(ilkgeleceksayilar());
 
-        
+       
+    }
+
+    public void BasaDonFonk()
+    {
+
+        SceneManager.LoadScene(2);
+
+    }
+
+    public IEnumerator IkinciDurumDondur()
+    {
+
+        yield return StartCoroutine(ikincigeleceksayilar());
+
 
     }
 
 
-    IEnumerator geleceksayilar()
+
+    IEnumerator ilkgeleceksayilar()
     {
 
         basilacaktxt.text = " Hazır ";
@@ -264,16 +289,78 @@ public class RenkKontrol : MonoBehaviour
 
         basilacaktxt.enabled = false;
 
+        interaktifAc();
+
+    }
+
+    private IEnumerator ikincigeleceksayilar()
+    {
+
+        DevamEt.gameObject.SetActive(false);
+
+        basari.enabled = false;
+
+        basilacaktxt.enabled = true;
+
+        basilacaktxt.text = " Hazır ";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.text = "1";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.text = "1 8";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.text = "1 8 6";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.text = "1 8 6 3";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.text = "1 8 6 3 7";
+
+        yield return new WaitForSeconds(1);
+
+        basilacaktxt.enabled = false;
+
+        interaktifAc();
+    }
+
+
+    void interaktifAc()
+    {
         for (int i = 0; i < 3; i++)
         {
-            cshButton[i].enabled = true;
-            e4Button[i].enabled = true;
+            cshButton[i].interactable = true;
+            e4Button[i].interactable = true;
 
         }
-        dsh4Button[0].enabled = true;
-        dsh4Button[1].enabled = true;
-        b3Button.enabled = true;
+        dsh4Button[0].interactable = true;
+        dsh4Button[1].interactable = true;
+        b3Button.interactable = true;
+
     }
+
+    void interaktifKapat()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            cshButton[i].interactable = false;
+            e4Button[i].interactable = false;
+
+        }
+        dsh4Button[0].interactable = false;
+        dsh4Button[1].interactable = false;
+        b3Button.interactable = false;
+
+    }
+
+
 
 
 

@@ -63,16 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MuzikYonetici.cs" />
-    <Compile Include="Assets\Scripts\AltDuvarKod.cs" />
-    <Compile Include="Assets\Scripts\AnaMenuKod.cs" />
-    <Compile Include="Assets\Scripts\ArkaplanKod.cs" />
+    <Compile Include="Assets\MüzikYönetMKutusu.cs" />
+    <Compile Include="Assets\Scripts\AnaMenuScript\AnaMenuKod.cs" />
+    <Compile Include="Assets\Scripts\MüzikKutusKod\DevamEtButonlarıKontrol.cs" />
     <Compile Include="Assets\Scripts\MüzikKutusKod\RenkKontrol.cs" />
-    <Compile Include="Assets\Scripts\SahneSınırKontrol.cs" />
-    <Compile Include="Assets\Scripts\ToplamPuan.cs" />
-    <Compile Include="Assets\Scripts\Yumurtlayıcı.cs" />
-    <Compile Include="Assets\Scripts\kameraSarsıntı.cs" />
-    <Compile Include="Assets\Scripts\karakterKod.cs" />
-    <Compile Include="Assets\Scripts\puanSistemi.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\AltDuvarKod.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\ArkaplanKod.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\SahneSınırKontrol.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\ToplamPuan.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\Yumurtlayıcı.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\kameraSarsıntı.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\karakterKod.cs" />
+    <Compile Include="Assets\Scripts\RenkTahtasıScript\puanSistemi.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/ASUS/Documents/Disleksi_Dönem_Projesi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
