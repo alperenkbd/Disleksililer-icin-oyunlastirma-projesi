@@ -6,27 +6,39 @@ using UnityEngine.UI;
 
 public class DevamEtButonlarıKontrol : MonoBehaviour
 {
-    public RenkKontrol ikincidurumicin;
+    public RenkKontrol NumControl;
     [SerializeField]
     Button DevamButton1Obje;
-    public int sayac;
+    public int devamsayac;
 
     public void DevamEtButon1()
     {
-        sayac++;
+        devamsayac++;
 
-        if (sayac == 1)
+        if (devamsayac == 1)
         {
 
-            StartCoroutine(ikincidurumicin.IkinciDurumDondur());
+            StartCoroutine(NumControl.IkinciDurumDondur());
 
             DevamButton1Obje.interactable = false;
 
         }
 
-            
+        if (devamsayac == 2)
+        {
 
+            StartCoroutine(NumControl.ucuncuDurumDondur());
 
+            DevamButton1Obje.interactable = false;
+        }
+
+        if(devamsayac == 3)
+        {
+
+            StartCoroutine(NumControl.sonDurumDondur());
+
+            DevamButton1Obje.interactable = false;
+        }
 
     }
 

@@ -14,4 +14,34 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/M\xFCzikKutusu.unity"
     guid: 088020a30096271479ef75e575ad8c1f
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level1.unity
+    guid: a66cd4ba636ee9a4ea75ab4bcbea091f
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level2.unity
+    guid: 30866ebc9b1431441828b9c76ffca960
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level3.unity
+    guid: c2e39b8cbaed1e442b4f4a68e849f6ec
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level4.unity
+    guid: bf0a86214f53d274e91d927725f80777
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level5.unity
+    guid: 5ecbb4be8445190489202caa4a7df1bf
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level6.unity
+    guid: 62ad7e2f0a61d344ebd2abd8eb26120a
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Level7.unity
+    guid: 15bd128fc4a7c314aa60dc218a4cc24f
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/Levels.unity
+    guid: d3e5c20291a039e4bbd4e37d30099a09
+  - enabled: 1
+    path: Assets/Scenes/matematikOyunSahneleri/SampleScene.unity
+    guid: bd4361e7b88b1cb489aba0e18e115e1f
+  - enabled: 1
+    path: Assets/Scenes/graph.unity
+    guid: 260f6bb99d3117b4c8a5e26de72fb74b
   m_configObjects: {}

@@ -10,7 +10,7 @@ public class AnaMenuKod : MonoBehaviour
     public GameObject MüzikKazanim;
     public GameObject OyunBitti;
     public GameObject nasilOyanir;
-
+    
    
 
 
@@ -35,6 +35,17 @@ public class AnaMenuKod : MonoBehaviour
 
 
     }
+
+    public void OyunaBaslaSokakyemekleri()
+    {
+
+
+
+        SceneManager.LoadScene(11);
+
+
+    }
+
 
 
     public void kazanimRenk() {
@@ -72,6 +83,8 @@ public class AnaMenuKod : MonoBehaviour
 
         SceneManager.LoadScene("MainMenu");
 
+        
+        
     }
 
 
